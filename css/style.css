@@ -1,0 +1,190 @@
+@font-face {
+    font-family: 'Inter';
+    src: url('/cssMemeSlider/cssMemeSlider/fonts/Inter-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Inter-bold';
+    src: url('/cssMemeSlider/cssMemeSlider/fonts/Inter-Bold.ttf');
+}
+
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    }
+
+body {
+    background-color: bisque;
+    margin: auto;
+    }
+
+h1 {
+    font-family: 'Inter-bold';
+    font-size: 50px;
+    line-height: 50px;
+    letter-spacing: 0.02em;
+    margin: 0;
+    color: black;
+    }
+
+.container {
+   max-width: 100%;
+    }
+
+.wrapper {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.header {
+    height: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3% auto;
+}
+
+.slider {
+   width: 400%;
+   max-height: 100%;
+   display: flex;
+   overflow: hidden;
+  }
+
+.item {
+    min-width: 25%;
+    min-height: 100%;
+    z-index: 0;
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+}
+
+.identifier {
+    display: flex;
+    justify-content: space-between;
+    margin: 3% auto;
+    align-items: center;
+}
+
+.text {
+    font-family: 'Inter';
+    font-size: 30px;
+    line-height: 50px;
+    letter-spacing: 0.02em;
+    margin: 0;
+    color: black;
+}
+
+.two, .three, .four {
+    display: none;
+}
+
+.dots{
+    width: 10vh;
+    height: 1vh;
+    display: flex;
+    justify-content: center;
+}
+
+.dot {
+    width: 1vh;
+    height: 1vh;
+    background-color: #000;
+    border-radius: 50%;
+    margin-right: 1vh;
+    cursor: pointer;
+    transition: all .4s easy;
+}
+
+.a {
+    background-color: #BB945F;
+}
+
+input[type="radio"] {
+   visibility: hidden;
+  }
+
+.wrapper input[type="radio"]:checked + label {
+    background-color: #BB945F;
+}
+
+.wrapper label {
+cursor: pointer;
+}
+
+#slide1:checked ~ .identifier label:nth-of-type(1),
+#slide2:checked ~ .identifier label:nth-of-type(2),
+#slide3:checked ~ .identifier label:nth-of-type(3),
+#slide4:checked ~ .identifier label:nth-of-type(4) {
+	background-color: #BB945F;
+}
+
+.wrapper label:hover {
+    background-color: #BB945F;
+}
+
+#sl1:checked ~ .slider > .slide1 {
+    margin-left: 0;
+    margin-right: 3%;
+    transition: .5s ease;
+  }
+
+#sl1:checked ~ .identifier > .text > .one {
+    display: block;
+    }
+    
+#sl1:checked ~ .identifier > .text > .two, .three, .four {
+    display: none;
+    }
+
+#sl2:checked ~ .slider > .slide1 {
+   margin-left: -25%;
+   transition: .5s ease;
+}
+
+#sl2:checked ~ .slider > .slide2 {
+    margin-right: 3%;
+}
+
+#sl2:checked ~ .identifier > .text > .two {
+    display: block;
+}
+
+#sl2:checked ~ .identifier > .text > .one, .three, .four {
+   display: none;
+}
+
+#sl3:checked ~ .slider > .slide2 {
+    margin-left: -50%;
+    transition: .5s ease;
+  }
+
+#sl3:checked ~ .slider > .slide3 {
+    margin-right: 3%;
+}
+
+#sl3:checked ~ .identifier > .text > .three {
+display: block;
+}
+
+#sl3:checked ~ .identifier > .text > .one, .two, .four {
+    display: none;
+}
+
+#sl4:checked ~ .slider > .slide3 {
+    margin-left: -75%;
+    transition: .5s ease;
+}
+
+#sl4:checked ~ .identifier > .text > .four {
+    display: block;
+    }
+    
+#sl4:checked ~ .identifier > .text > .one, .two, .three {
+    display: none;
+    }
