@@ -117,10 +117,10 @@ input[type="radio"] {
 cursor: pointer;
 }
 
-#slide1:checked ~ .identifier label:nth-of-type(1),
-#slide2:checked ~ .identifier label:nth-of-type(2),
-#slide3:checked ~ .identifier label:nth-of-type(3),
-#slide4:checked ~ .identifier label:nth-of-type(4) {
+#slide1:checked ~ .identifier > .dots > label:nth-of-type(1),
+#slide2:checked ~ .identifier > .dots > label:nth-of-type(2),
+#slide3:checked ~ .identifier > .dots > label:nth-of-type(3),
+#slide4:checked ~ .identifier > .dots > label:nth-of-type(4) {
 	background-color: #BB945F;
 }
 
@@ -188,3 +188,13 @@ display: block;
 #sl4:checked ~ .identifier > .text > .one, .two, .three {
     display: none;
     }
+
+@media screen and (max-width: 750px) {
+    .identifier {
+        flex-direction: column;
+    }
+
+    .dots {
+        order: -1;
+    }
+}
